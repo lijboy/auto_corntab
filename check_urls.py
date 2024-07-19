@@ -3,8 +3,8 @@ import csv
 import os
 from datetime import datetime
 
-# 从环境变量中读取URL列表
-urls = os.getenv("URLS").split(",")
+# 从环境变量中读取URL列表，并按行分割
+urls = os.getenv("URLS").strip().split("\n")
 
 # 打开CSV文件，准备写入
 with open("url_check_results.csv", mode="a", newline="") as file:
