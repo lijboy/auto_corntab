@@ -1,12 +1,10 @@
 import requests
 import csv
-import json
+import os
 from datetime import datetime
 
-# 读取配置文件
-with open("config.json", "r") as file:
-    config = json.load(file)
-    urls = config["urls"]
+# 从环境变量中读取URL列表
+urls = os.getenv("URLS").split(",")
 
 # 打开CSV文件，准备写入
 with open("url_check_results.csv", mode="a", newline="") as file:
