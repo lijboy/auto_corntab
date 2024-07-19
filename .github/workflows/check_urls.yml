@@ -29,6 +29,11 @@ jobs:
         URLS: ${{ vars.URLS }}
       run: python check_urls.py
 
+    - name: Show Git status
+      run: |
+        git status
+        git log --oneline
+
     - name: Commit results
       run: |
         git config --global user.name 'github-actions[bot]'
